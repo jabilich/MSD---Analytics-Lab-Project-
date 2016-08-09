@@ -90,3 +90,26 @@ create table if not exists  trackGenre (
 LOAD DATA LOCAL INFILE 'C:\\Users/JacobBilich/Documents/MillionSongSubset/genre.csv'
 INTO TABLE trackGenre FIELDS TERMINATED BY ',' #nes terminated by '\r\n'
     ignore 1 lines; 
+
+
+#==============================================================================================================================
+#			Patrice's Data Load for binned years
+#==============================================================================================================================
+
+
+use stmusic;
+create table tracksPerYearBinned (
+SELECT year, trackID, artistName, songName, 
+case when year like '192%' then 1920
+    when year like '193%' then 1930
+    when year like '194%' then 1940
+    when year like '195%' then 1950
+    when year like '196%' then 1960
+    when year like '197%' then 1970
+    when year like '198%' then 1980
+    when year like '199%' then 1990
+    when year like '200%' then 2000
+    when year like '201%' then 2010
+end as yearBin from tracksPerYear);
+
+select * from tracksPerYearBinned;

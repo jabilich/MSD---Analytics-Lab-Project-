@@ -9,8 +9,8 @@ create table artistLocation (
 artistID varchar(50),
 latitude decimal(35,10),
 longitude decimal(35,10),
-artistName varchar(100),
-location varchar(100)); 
+trackID varchar(100),
+artistName varchar(100)); 
 
 -- load subset_artist_location.txt - artistLocation
 LOAD DATA LOCAL INFILE '/Users/pstockover/Desktop/dataproject/MillionSongSubset/AdditionalFiles/subset_artist_location.txt'

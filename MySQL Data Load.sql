@@ -81,3 +81,14 @@ load data local infile 'C:\\Users/JacobBilich/Documents/MillionSongSubset/Additi
     ;
 #show warnings;
 
+
+#Create trackGenre Table
+create table if not exists  trackGenre (
+	trackID varchar(50),
+	genre varchar(50)
+);
+
+#load data into the trackGenre table    
+LOAD DATA LOCAL INFILE 'C:\\Users/JacobBilich/Documents/MillionSongSubset/genre.csv'
+INTO TABLE trackGenre FIELDS TERMINATED BY ',' #nes terminated by '\r\n'
+    ignore 1 lines; 

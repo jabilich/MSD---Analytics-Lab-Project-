@@ -50,14 +50,13 @@ create table if not exists  uniqueTracks (
 );
 #load the uniqueTracks tab delimited datafile 
 load data local infile 'C:\\Users/JacobBilich/Documents/MillionSongSubset/AdditionalFiles/subset_unique_tracks.txt' 	
-# formatting of the slashes in the path is important
-	into table uniqueTracks
+    into table uniqueTracks
     character set latin1
-    fields terminated by '<SEP>' OPTIONALLY enclosed by '"' 	# tells the dB that there are fields with quotation marks
+    fields terminated by '<SEP>' OPTIONALLY enclosed by '"' 	
     #lines terminated by '\r\n'
     #ignore 1 lines
     ;
-#show warnings;
+
 
 #select * from uniquetracks;
 
@@ -72,14 +71,13 @@ create table if not exists  uniqueArtists (
 );
 #load the uniqueArtists tab delimited datafile 
 load data local infile 'C:\\Users/JacobBilich/Documents/MillionSongSubset/AdditionalFiles/subset_unique_artists.txt' 	
-# formatting of the slashes in the path is important
-	into table uniqueArtists
+    into table uniqueArtists
     character set latin1
-    fields terminated by '<SEP>' OPTIONALLY enclosed by '"' 	# tells the dB that there are fields with quotation marks
+    fields terminated by '<SEP>' OPTIONALLY enclosed by '"' 	
     #lines terminated by '\r\n'
     #ignore 1 lines
     ;
-#show warnings;
+
 
 
 #Create trackGenre Table
